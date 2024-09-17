@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 70px;
+}
+
+.titlebar {
+    height: 60%;
+}
+
+.titlebar img {
+    height: 80%;
+    margin: 5px;
+}
+
+.menu-bar {
+    display: flex;
+    gap: 20px;
+    height: 40%;
+    align-items: center;
+    justify-content: left;
+    padding-left: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    position: relative;
+}
+
+.menu-btn {
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #ceeef9;
+}
+
+.input-file {
+    display: none;
+}
+
+.menu {
+    position: relative; /* Ensure the dropdown is positioned relative to the menu */
+}
+
+.menu ul {
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    border: 1px solid #D7DBDE;
+    padding: 0;
+    margin-top: 0px; /* Add space between the button and the dropdown */
+    display: none; /* Hide by default */
+    z-index: 10; /* Ensure dropdown is on top */
+}
+
+.menu:hover ul {
+    display: block; /* Show the dropdown when hovering over the entire menu */
+}
+
+.menu ul li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu ul li:hover {
+    background-color: #7d7d7d;
+    color: white;
+}
+
+main {
+    background-color: #000000;
+    height: calc(100vh - 120px);
+}
+
+.video{
+    width: 100%;
+    height: 100%;
+}
+
+.active {
+        color: #797979;
+        border-radius: 5px;
+    }
+
+#timeSlider {
+    width: 50%; /* Set the width of the slider */
+    height: 8px; /* Set the height of the slider */
+    background-color: #ccc;
+    appearance: none; /* Remove default browser styling */
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+#timeSlider.active {
+    background-color: #f0f0f0;
+}
+
+.toast {
+    position: fixed;
+    color: white;
+    top: 90px;
+    font-size: 20px;
+    right: 20px;
+    display: none;
+}
+
+footer {
+    padding-left: 10px;
+    height: 50px;
+    background-color: #D7DBDE;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+}

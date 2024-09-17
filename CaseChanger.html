@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Manipulation Lab</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      #uppercase-btn {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      #uppercase-btn:hover {
+        background-color: #45a049;
+      }
+
+      #lowercase-btn {
+        background-color: #008CBA;
+        color: white;
+      }
+
+      #lowercase-btn:hover {
+        background-color: #007bb5;
+      }
+
+      #reset-btn {
+        background-color: #f44336;
+        color: white;
+      }
+
+      #reset-btn:hover {
+        background-color: #e53935;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      #output {
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="input-text" />
+    <button id="uppercase-btn">Uppercase</button>
+    <button id="lowercase-btn">Lowercase</button>
+    <button id="reset-btn">Reset</button>
+    <p>Output: <span id="output"></span></p>
+
+    <script>
+      const input = document.querySelector("#input-text");
+      const upperCaseBtn = document.querySelector("#uppercase-btn");
+      const lowerCaseBtn = document.querySelector("#lowercase-btn");
+      const resetBtn = document.querySelector("#reset-btn");
+      const output = document.querySelector("#output");
+
+      upperCaseBtn.addEventListener("click", function () {
+        let newInput = input.value;
+        if (newInput === '') return;
+        const upper = newInput.toUpperCase();
+        output.innerHTML = upper;
+        console.log("Uppercase button clicked");
+      });
+
+      lowerCaseBtn.addEventListener("click", function () {
+        let newInput = input.value;
+        if (newInput === '') return;
+        const lower = newInput.toLowerCase();
+        output.innerHTML = lower;
+        console.log("Lowercase button clicked");
+      });
+
+      resetBtn.addEventListener("click", function () {
+        input.value = '';
+        output.textContent = '';
+        console.log("Reset button clicked");
+      });
+    </script>
+  </body>
+</html>
